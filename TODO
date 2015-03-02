@@ -1,0 +1,26 @@
+Problems I want to do:
+	- Problem 17
+	- Problem 18 and 67
+	- Problem 22
+
+
+# Problem 18 and 67
+I think that the solution here could be someway related to dynamic programming.
+What I have in mind is to first parse the triangle into a DAG (Directed acyclic
+graph) and then create a function named F(node) which would be the maximum path
+sum to that node.
+
+F(node) would be implemented with a lookup table, terminating a search if 
+the current value was lower than that of the current chain. This would reduce
+the amount of paths that would have to be visited dramatically and cut the
+needed computations by orders of magnitude.
+
+What is yet to see is if this is indeed fast enough, especially for problem 67.
+
+A note about the answer is that it must be a natural number x so that:
+
+Problem 18:  15*1  <= x <= 99*15  <=> 15  <= x <= 1485
+Problem 67:  100*1 <= x <= 99*100 <=> 100 <= x <= 9900
+
+This means that we can operate with unsigned 16-bit integers, for added
+performance.

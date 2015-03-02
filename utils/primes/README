@@ -1,0 +1,4 @@
+# What is this?
+This is where I pregenerate the primelookuptable used in the other solutions.
+It consists of a program to parse the data from the primepages, into a header
+file.
