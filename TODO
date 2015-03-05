@@ -1,7 +1,7 @@
 Problems I want to do:
-	- Problem 17
-	- Problem 18 and 67
-	- Problem 22
+    - Problem 17
+    - Problem 18 and 67
+    - Problem 22
 
 
 # Problem 18 and 67
@@ -24,3 +24,12 @@ Problem 67:  100*1 <= x <= 99*100 <=> 100 <= x <= 9900
 
 This means that we can operate with unsigned 16-bit integers, for added
 performance.
+
+# Problems I want to clean up.
+## Problem 349
+This solution is very fast and is working great, but I feel like I added some
+uneeded complexity to it, that I could strip away. The goal of these exercises
+is not to write a lot of code to solve one problem.
+
+I am unsure if I want to go for a mathematical formula, as some of the fun was
+computing the first part before going on to looping 104 steps. 
