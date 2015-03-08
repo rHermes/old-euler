@@ -24,7 +24,11 @@ must return the answer as a string, so as to avoid any overflows.
 #include "euler14.h"
 #include "euler15.h"
 #include "euler16.h"
+#include "euler17.h"
+#include "euler18.h"
 #include "euler20.h"
+#include "euler30.h"
+#include "euler67.h"
 #include "euler349.h"
 
 static double total = 0.0;
@@ -65,7 +69,11 @@ int main() {
 	executeProblem(14, euler14);
 	executeProblem(15, euler15);
 	executeProblem(16, euler16);
+	executeProblem(17, euler17);
+	executeProblem(18, euler18);
 	executeProblem(20, euler20);
+	executeProblem(30, euler30);
+    executeProblem(67, euler67);
 	executeProblem(349, euler349);
     
     std::cout << std::endl;

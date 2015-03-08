@@ -1,6 +1,4 @@
 Problems I want to do:
-    - Problem 17
-    - Problem 18 and 67
     - Problem 22
 
 
