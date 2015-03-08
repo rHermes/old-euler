@@ -33,3 +33,12 @@ is not to write a lot of code to solve one problem.
 
 I am unsure if I want to go for a mathematical formula, as some of the fun was
 computing the first part before going on to looping 104 steps. 
+
+# Problem 2
+Optimize problem 2, since each third term will be even.
+
+# Problem 12
+Things could really be a lot quicker here. Look at the summary.
+
+# Things I want to implement
+    - Integer factorization
