@@ -22,6 +22,9 @@ Direction newDir(Direction dir, bool clockwise) {
     case (Direction::down) : return (clockwise) ? Direction::left : Direction::right; break;
     case (Direction::left) : return (clockwise) ? Direction::up : Direction::down; break;
     }
+    
+    // Just to silence an error.
+    return Direction::up;
 }
 
 void moveDir(point* p, Direction dir) {

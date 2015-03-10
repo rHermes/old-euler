@@ -1,5 +1,5 @@
 #include <string>
-
+#include "common.h"
 /*
  * This problem is fast to solve if you realize that you can write a 6 digit
  * number, written as abccba, can be written as:
@@ -14,18 +14,6 @@
  * this number must be divisible by 11. We can use this to filter out a lot
  * of possibilities.
  */
-
-bool isPalindrome(const int &n) {
-    int num = n, dig, rev = 0;
-    rev = 0;
-    while (num > 0)
-    {
-        dig = num % 10;
-        rev = rev * 10 + dig;
-        num = num / 10;
-    }
-    return (n == rev);
-}
 
 std::string euler4() {
     int answer = 0;

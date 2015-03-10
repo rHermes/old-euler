@@ -1,5 +1,8 @@
 Problems I want to do:
+
     - Problem 22
+    - Problem 33
+    - Get rid of GMP where it is not needed.
 
 
 # Problem 18 and 67
@@ -22,6 +25,10 @@ Problem 67:  100*1 <= x <= 99*100 <=> 100 <= x <= 9900
 
 This means that we can operate with unsigned 16-bit integers, for added
 performance.
+
+# Problem 34
+We only need to test up to 7 digits as that is when n * 9! no longer exceeds
+the maximum 7 digit number.
 
 # Problems I want to clean up.
 ## Problem 349

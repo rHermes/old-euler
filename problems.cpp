@@ -27,7 +27,11 @@ must return the answer as a string, so as to avoid any overflows.
 #include "euler17.h"
 #include "euler18.h"
 #include "euler20.h"
+#include "euler29.h"
 #include "euler30.h"
+#include "euler34.h"
+#include "euler36.h"
+#include "euler48.h"
 #include "euler67.h"
 #include "euler349.h"
 
@@ -72,7 +76,11 @@ int main() {
 	executeProblem(17, euler17);
 	executeProblem(18, euler18);
 	executeProblem(20, euler20);
+	executeProblem(29, euler29);
 	executeProblem(30, euler30);
+	executeProblem(34, euler34);
+	executeProblem(36, euler36);
+	executeProblem(48, euler48);
     executeProblem(67, euler67);
 	executeProblem(349, euler349);
     

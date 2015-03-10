@@ -15,6 +15,86 @@ bool isInteger(double d) {
     return std::modf(d, &intpart) == 0.0;
 }
 
+bool isPalindrome(const int &n) {
+    int num = n, dig, rev = 0;
+    rev = 0;
+    while (num > 0)
+    {
+        dig = num % 10;
+        rev = rev * 10 + dig;
+        num = num / 10;
+    }
+    return (n == rev);
+}
+
+bool isPalindrome(const std::string& str) {
+    int length = str.length();
+    int limit = length/2;
+    for (int i = 0; i < limit; i++)
+        if (str[i] != str[length - i - 1])
+            return false;
+
+    return true;
+}
+
+
+// This is really slow, but it works!
+std::vector<uint_fast64_t> intPrimeFactorTrial(uint_fast64_t N) {
+    std::vector<uint_fast64_t> factors;
+
+    // get rid of all the 2s
+    while ((N % 2) == 0) {
+        factors.push_back(2);
+        N /= 2;
+    }
+
+    // Get the max factor.
+    uint_fast64_t maxFactor = (uint_fast64_t)std::sqrt(N);
+    
+    // We can iterate by 2
+    for (uint_fast64_t factor = 3; N > 1 && factor <= maxFactor; factor += 2) {
+        while ((N % factor) == 0) {
+            factors.push_back(factor);
+            N /= factor;
+            maxFactor = (uint_fast64_t)std::sqrt(N);
+        }
+    }
+
+    // IF N isn't 1 we know it is prime.
+    if (N != 1)
+        factors.push_back(N);
+
+    return factors;
+}
+
+std::map<uint_fast64_t, uint_fast64_t> intPrimeFactorTrialExp(uint_fast64_t N) {
+    std::map<uint_fast64_t,uint_fast64_t> factors;
+
+    // get rid of all the 2s
+    while ((N % 2) == 0) {
+        factors[2]++;
+        N /= 2;
+    }
+
+    // Get the max factor.
+    uint_fast64_t maxFactor = (uint_fast64_t)std::sqrt(N);
+    
+    // We can iterate by 2
+    for (uint_fast64_t factor = 3; N > 1 && factor <= maxFactor; factor += 2) {
+        while ((N % factor) == 0) {
+            factors[factor]++;
+            N /= factor;
+            maxFactor = (uint_fast64_t)std::sqrt(N);
+        }
+    }
+
+    // IF N isn't 1 we know it is prime.
+    if (N != 1)
+        factors[N]++;
+
+    return factors;
+}
+
 /* This is slow ass, but will work. */
 std::vector<mpz_class> gmpPrimeFactorTrial(mpz_class N) {
     std::vector<mpz_class> factors;
@@ -81,6 +161,15 @@ std::vector<mpz_class> gmpPrimeFactor(mpz_class N) {
 /* Gives back a table of <prime,times> */
 std::map<mpz_class, mpz_class> gmpPrimeFactorExp(mpz_class N) {
    return gmpPrimeFactorTrialExp(N); 
+}
+
+// Gives back a table of <prime,times> */
+std::map<uint_fast64_t, uint_fast64_t> intPrimeFactorExp(uint_fast64_t N) {
+    return intPrimeFactorTrialExp(N);
+}
+
+std::vector<uint_fast64_t> intPrimeFactor(uint_fast64_t N) {
+    return intPrimeFactorTrial(N);
 }
 
 /* This could be optimized, as you could use some kind of algorithm to decide
