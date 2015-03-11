@@ -2,6 +2,9 @@
 #include <cstdint>
 #include <vector>
 #include <algorithm>
+/*
+ * One tips I got from Mats was to only test 4 directions not all 8 
+ */
 
 std::string euler11() {
     // The grid.
@@ -36,33 +39,22 @@ std::string euler11() {
     for (int y = 0; y < 20; y++) {
         for (int x = 0; x < 20; x++) {
             // There are 8 different ways this can branch. Special care is
-            // needed to make sure none of them go out of bounds.
+            // needed to make sure none of them go out of bounds. We only
+            // need to check 4 of them :)
             
             // If grid[y][x] is 0 we skip
             if (grid[y][x] == 0)
                 continue;
 
             // All the numbers will have grid[y][x] as a factor, so why do extra work.
-            uint_fast64_t left, right, up, down, leftup, leftdown, rightup, rightdown;
-            left = right = up = down = leftup = rightup = leftdown = rightdown = grid[y][x];
-
-            if (x > 2) // Can we do left?
-               left *= grid[y][x-1] * grid[y][x-2] * grid[y][x-3];
+            uint_fast64_t right, down, rightup, rightdown;
+            right = down = rightup = rightdown = grid[y][x];
 
             if (x < 17) // Can we do right?
                right *= grid[y][x+1] * grid[y][x+2] * grid[y][x+3];
 
-            if (y > 2) // Can we do up?
-                up *= grid[y-1][x] * grid[y-2][x] * grid[y-3][x];
-
             if (y < 17) // Can we do down?
                 down *= grid[y+1][x] * grid[y+2][x] * grid[y+3][x];
-
-            if (y > 2 && x > 2) // Can we do left-up?
-                leftup *= grid[y-1][x-1] * grid[y-2][x-2] * grid[y-3][x-3];
-
-            if (y < 17 && x > 2) // can we do left-down?
-                leftdown *= grid[y+1][x-1] * grid[y+2][x-2] * grid[y+3][x-3];
 
             if (y > 2 && x < 17) // Can we do right-up?
                 rightup *= grid[y-1][x+1] * grid[y-2][x+2] * grid[y-3][x+3];
@@ -70,7 +62,7 @@ std::string euler11() {
             if (y < 17 && x < 17) // can we do right-down?
                 rightdown *= grid[y+1][x+1] * grid[y+2][x+2] * grid[y+3][x+3];
 
-            uint_fast64_t biggest = std::max({left, right, up, down, leftup, leftdown, rightup, rightdown});
+            uint_fast64_t biggest = std::max({right, down, rightup, rightdown});
 
             if (biggest > answer)
                 answer = biggest;

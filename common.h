@@ -37,6 +37,10 @@ bool isPalindrome(const std::string& str) {
     return true;
 }
 
+constexpr uint_fast64_t intCantorPairing(const uint_fast64_t& k1, const uint_fast64_t& k2) {
+    return 1/2 * (k1 + k2) * (k1 + k2 + 1) + k2;
+}
+
 
 // This is really slow, but it works!
 std::vector<uint_fast64_t> intPrimeFactorTrial(uint_fast64_t N) {

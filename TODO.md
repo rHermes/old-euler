@@ -1,8 +1,8 @@
 Problems I want to do:
-
     - Problem 22
     - Problem 33
     - Get rid of GMP where it is not needed.
+
 
 
 # Problem 18 and 67
@@ -44,6 +44,20 @@ Optimize problem 2, since each third term will be even.
 
 # Problem 12
 Things could really be a lot quicker here. Look at the summary.
+
+# Problem 81-83
+I think I have implemented 81 and 83 in an okay matter. The running time is not
+superb, but it will have to do for now, before I go over and optimize all my
+solutions.
+
+Problem 82 is a problem however! I have only ran the solution once, and it
+gave me the correct answer, but it did so in about 10 minutes. This is way to
+slow for a speedster such as myself. I think a complete rethink of the problem
+is required to do this. It will involve dynamic programming of some kind, that
+I know.
+
+Another idea is to run dijsktra repetadly. I wonder if this could work better
+than what we currently have. It is worth a try.
 
 # Things I want to implement
     - Integer factorization
