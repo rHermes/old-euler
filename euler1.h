@@ -2,6 +2,7 @@
 
 std::string euler1() {
     int answer = 0;
+
     for (int x = 3; x < 1000; x += 3)
         answer += x;
 

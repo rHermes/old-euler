@@ -8,26 +8,27 @@
  */
 
 std::string euler14() {
-    uint_fast64_t answer = 0;
+    uint_fast64_t answer   = 0;
     uint_fast64_t maxchain = 0;
+
     for (uint_fast64_t N = 1; N < 1000000; N++) {
         uint_fast64_t chain = 1;
-        uint_fast64_t n = N;
+        uint_fast64_t n     = N;
         while (n != 1) {
-            if ((n % 2) == 0) {
+            if ( (n % 2) == 0 ) {
                 n /= 2;
                 chain++;
             } else {
                 // We do two steps in once, as we know that the next number is
                 // even.
-                n = (3*n + 1)/2;
+                n      = (3 * n + 1) / 2;
                 chain += 2;
             }
         }
         if (chain > maxchain) {
-            answer = N;
+            answer   = N;
             maxchain = chain;
-        }        
+        }
     }
     return std::to_string(answer);
 }

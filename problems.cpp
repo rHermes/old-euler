@@ -1,7 +1,7 @@
 /*
-This is the executor for each of the other euler tasks. Each of the functions
-must return the answer as a string, so as to avoid any overflows.
-*/
+ *   This is the executor for each of the other euler tasks. Each of the functions
+ *   must return the answer as a string, so as to avoid any overflows.
+ */
 #include <iostream>
 #include <string>
 #include <omp.h>
@@ -14,9 +14,11 @@ must return the answer as a string, so as to avoid any overflows.
 #include "euler4.h"
 #include "euler5.h"
 #include "euler6.h"
+
 //#include "euler7.h"
 #include "euler8.h"
 #include "euler9.h"
+
 //#include "euler10.h"
 #include "euler11.h"
 #include "euler12.h"
@@ -40,23 +42,23 @@ must return the answer as a string, so as to avoid any overflows.
 #include "euler83.h"
 #include "euler349.h"
 
-static double total = 0.0;
-static int total_problems = 0;
+static double total          = 0.0;
+static int    total_problems = 0;
 
-void executeProblem(int num, std::string (*problem)()) {
-    double start = omp_get_wtime();
+void executeProblem( int num, std::string (*problem)() ) {
+    double      start  = omp_get_wtime();
     std::string answer = (*problem)();
-    double end = omp_get_wtime();
-    
+    double      end    = omp_get_wtime();
+
     double diff = end - start;
 
     // Update global variables.
-    total += diff;  
+    total += diff;
     total_problems++;
 
     std::cout << std::left << std::setw(3) << std::setfill(' ') << num;
     std::cout << std::right << std::setw(30) << std::setfill(' ') << answer;
-    std::cout << std::right << std::setw(20) << std::setfill(' ') << std::fixed << std::showpoint << std::setprecision(6) << diff*1000 << " ms";
+    std::cout << std::right << std::setw(20) << std::setfill(' ') << std::fixed << std::showpoint << std::setprecision(6) << diff * 1000 << " ms";
     std::cout << std::endl;
 }
 
@@ -68,9 +70,11 @@ int main() {
     executeProblem(4, euler4);
     executeProblem(5, euler5);
     executeProblem(6, euler6);
+
 //  executeProblem(7, euler7);
     executeProblem(8, euler8);
     executeProblem(9, euler9);
+
 //  executeProblem(10, euler10);
     executeProblem(11, euler11);
     executeProblem(12, euler12);
@@ -90,12 +94,13 @@ int main() {
     executeProblem(48, euler48);
     executeProblem(67, euler67);
     executeProblem(81, euler81);
+
 //  executeProblem(82, euler82); // To slow!
     executeProblem(83, euler83);
     executeProblem(349, euler349);
-    
+
     std::cout << std::endl;
 
     std::cout << "The total running time was:   " << total * 1000 << " miliseconds." << std::endl;
-    std::cout << "The average running time was: " << (total * 1000)/total_problems << " miliseconds." << std::endl;
+    std::cout << "The average running time was: " << (total * 1000) / total_problems << " miliseconds." << std::endl;
 }

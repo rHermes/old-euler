@@ -11,7 +11,7 @@ What I have in mind is to first parse the triangle into a DAG (Directed acyclic
 graph) and then create a function named F(node) which would be the maximum path
 sum to that node.
 
-F(node) would be implemented with a lookup table, terminating a search if 
+F(node) would be implemented with a lookup table, terminating a search if
 the current value was lower than that of the current chain. This would reduce
 the amount of paths that would have to be visited dramatically and cut the
 needed computations by orders of magnitude.
@@ -37,7 +37,7 @@ uneeded complexity to it, that I could strip away. The goal of these exercises
 is not to write a lot of code to solve one problem.
 
 I am unsure if I want to go for a mathematical formula, as some of the fun was
-computing the first part before going on to looping 104 steps. 
+computing the first part before going on to looping 104 steps.
 
 # Problem 2
 Optimize problem 2, since each third term will be even.

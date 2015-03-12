@@ -4,15 +4,15 @@
 
 std::string euler17_cardinal(int n) {
     std::map<int,std::string> lookup;
-    lookup[1] = "one";
-    lookup[2] = "two";
-    lookup[3] = "three";
-    lookup[4] = "four";
-    lookup[5] = "five";
-    lookup[6] = "six";
-    lookup[7] = "seven";
-    lookup[8] = "eight";
-    lookup[9] = "nine";
+    lookup[1]  = "one";
+    lookup[2]  = "two";
+    lookup[3]  = "three";
+    lookup[4]  = "four";
+    lookup[5]  = "five";
+    lookup[6]  = "six";
+    lookup[7]  = "seven";
+    lookup[8]  = "eight";
+    lookup[9]  = "nine";
     lookup[10] = "ten";
 
     lookup[11] = "eleven";
@@ -45,38 +45,39 @@ std::string euler17_cardinal(int n) {
     lookup[900] = "ninehundred";
 
     lookup[1000] = "onethousand";
-    
+
     std::string answer = "";
-    if (lookup.find(n) != lookup.end())
+    if ( lookup.find(n) != lookup.end() )
         answer += lookup[n];
-    
+
     else if (n < 100) {
         // Imagen number written as "ab"
-        int b = n % 10;    
-        int a = n/10;
+        int b = n % 10;
+        int a = n / 10;
 
-        answer += lookup[a*10] + lookup[b];
+        answer += lookup[a * 10] + lookup[b];
     } else if (n < 1000) {
-       // Imagen number written as "abc" 
-       int a = n / 100;
-       int b = (n % 100) / 10;
-       int c = (n % 100) % 10;
-        
-       answer += lookup[a] + "hundredand";
+        // Imagen number written as "abc"
+        int a = n / 100;
+        int b = (n % 100) / 10;
+        int c = (n % 100) % 10;
 
-       if (lookup.find(b * 10 + c) != lookup.end())
-           answer += lookup[b*10 + c];
-       else
-           answer += lookup[b*10] + lookup[c];
+        answer += lookup[a] + "hundredand";
+
+        if ( lookup.find(b * 10 + c) != lookup.end() )
+            answer += lookup[b * 10 + c];
+        else
+            answer += lookup[b * 10] + lookup[c];
     }
-    
+
     return answer;
 }
 
 std::string euler17() {
     uint_fast64_t answer = 0;
+
     for (int i = 1; i <= 1000; i++)
         answer += euler17_cardinal(i).length();
-    
+
     return std::to_string(answer);
 }

@@ -12,24 +12,26 @@
  */
 bool isInteger(double d) {
     double intpart;
+
     return std::modf(d, &intpart) == 0.0;
 }
 
 bool isPalindrome(const int &n) {
     int num = n, dig, rev = 0;
+
     rev = 0;
-    while (num > 0)
-    {
+    while (num > 0) {
         dig = num % 10;
         rev = rev * 10 + dig;
         num = num / 10;
     }
-    return (n == rev);
+    return n == rev;
 }
 
 bool isPalindrome(const std::string& str) {
     int length = str.length();
-    int limit = length/2;
+    int limit  = length / 2;
+
     for (int i = 0; i < limit; i++)
         if (str[i] != str[length - i - 1])
             return false;
@@ -38,31 +40,30 @@ bool isPalindrome(const std::string& str) {
 }
 
 constexpr uint_fast64_t intCantorPairing(const uint_fast64_t& k1, const uint_fast64_t& k2) {
-    return 1/2 * (k1 + k2) * (k1 + k2 + 1) + k2;
+    return 1 / 2 * (k1 + k2) * (k1 + k2 + 1) + k2;
 }
-
 
 // This is really slow, but it works!
 std::vector<uint_fast64_t> intPrimeFactorTrial(uint_fast64_t N) {
     std::vector<uint_fast64_t> factors;
 
     // get rid of all the 2s
-    while ((N % 2) == 0) {
+    while ( (N % 2) == 0 ) {
         factors.push_back(2);
         N /= 2;
     }
 
     // Get the max factor.
-    uint_fast64_t maxFactor = (uint_fast64_t)std::sqrt(N);
-    
+    uint_fast64_t maxFactor = (uint_fast64_t) std::sqrt(N);
+
     // We can iterate by 2
-    for (uint_fast64_t factor = 3; N > 1 && factor <= maxFactor; factor += 2) {
-        while ((N % factor) == 0) {
+    for (uint_fast64_t factor = 3; N > 1 && factor <= maxFactor; factor += 2)
+        while ( (N % factor) == 0 ) {
             factors.push_back(factor);
-            N /= factor;
-            maxFactor = (uint_fast64_t)std::sqrt(N);
+            N        /= factor;
+            maxFactor = (uint_fast64_t) std::sqrt(N);
         }
-    }
+
 
     // IF N isn't 1 we know it is prime.
     if (N != 1)
@@ -75,22 +76,22 @@ std::map<uint_fast64_t, uint_fast64_t> intPrimeFactorTrialExp(uint_fast64_t N) {
     std::map<uint_fast64_t,uint_fast64_t> factors;
 
     // get rid of all the 2s
-    while ((N % 2) == 0) {
+    while ( (N % 2) == 0 ) {
         factors[2]++;
         N /= 2;
     }
 
     // Get the max factor.
-    uint_fast64_t maxFactor = (uint_fast64_t)std::sqrt(N);
-    
+    uint_fast64_t maxFactor = (uint_fast64_t) std::sqrt(N);
+
     // We can iterate by 2
-    for (uint_fast64_t factor = 3; N > 1 && factor <= maxFactor; factor += 2) {
-        while ((N % factor) == 0) {
+    for (uint_fast64_t factor = 3; N > 1 && factor <= maxFactor; factor += 2)
+        while ( (N % factor) == 0 ) {
             factors[factor]++;
-            N /= factor;
-            maxFactor = (uint_fast64_t)std::sqrt(N);
+            N        /= factor;
+            maxFactor = (uint_fast64_t) std::sqrt(N);
         }
-    }
+
 
     // IF N isn't 1 we know it is prime.
     if (N != 1)
@@ -104,23 +105,23 @@ std::vector<mpz_class> gmpPrimeFactorTrial(mpz_class N) {
     std::vector<mpz_class> factors;
 
     // Get rid of all the 2s
-    while (mpz_even_p(N.get_mpz_t())) {
-        factors.push_back(mpz_class{2});
+    while ( mpz_even_p( N.get_mpz_t() ) ) {
+        factors.push_back(mpz_class { 2 });
         N /= 2;
     }
-    
+
     // Get the max factor.
     mpz_class maxFactor;
-    mpz_sqrt(maxFactor.get_mpz_t(), N.get_mpz_t());
+    mpz_sqrt( maxFactor.get_mpz_t(), N.get_mpz_t() );
 
-    for (mpz_class factor {3}; N > 1 && factor <= maxFactor; factor += 2) {
-        while ((N % factor) == 0) {
+    for (mpz_class factor { 3 }; N > 1 && factor <= maxFactor; factor += 2)
+        while ( (N % factor) == 0 ) {
             factors.push_back(factor);
             N /= factor;
-            mpz_sqrt(maxFactor.get_mpz_t(), N.get_mpz_t());
+            mpz_sqrt( maxFactor.get_mpz_t(), N.get_mpz_t() );
         }
-    }
-    
+
+
     // If N isn't 1 we know it is prime
     if (N != 1)
         factors.push_back(N);
@@ -133,23 +134,23 @@ std::map<mpz_class,mpz_class> gmpPrimeFactorTrialExp(mpz_class N) {
     std::map<mpz_class,mpz_class> factors;
 
     // Get rid of all the 2s
-    while (mpz_even_p(N.get_mpz_t())) {
-        factors[mpz_class {2}] = factors[mpz_class{2}] + 1;
-        N /= 2;
+    while ( mpz_even_p( N.get_mpz_t() ) ) {
+        factors[mpz_class { 2 }] = factors[mpz_class { 2 }] + 1;
+        N                       /= 2;
     }
-    
+
     // Get the max factor.
     mpz_class maxFactor;
-    mpz_sqrt(maxFactor.get_mpz_t(), N.get_mpz_t());
+    mpz_sqrt( maxFactor.get_mpz_t(), N.get_mpz_t() );
 
-    for (mpz_class factor {3}; N > 1 && factor <= maxFactor; factor += 2) {
-        while ((N % factor) == 0) {
+    for (mpz_class factor { 3 }; N > 1 && factor <= maxFactor; factor += 2)
+        while ( (N % factor) == 0 ) {
             factors[factor] = factors[factor] + 1;
-            N /= factor;
-            mpz_sqrt(maxFactor.get_mpz_t(), N.get_mpz_t());
+            N              /= factor;
+            mpz_sqrt( maxFactor.get_mpz_t(), N.get_mpz_t() );
         }
-    }
-    
+
+
     // If N isn't 1 we know it is prime
     if (N != 1)
         factors[N] = factors[N] + 1;
@@ -164,7 +165,7 @@ std::vector<mpz_class> gmpPrimeFactor(mpz_class N) {
 
 /* Gives back a table of <prime,times> */
 std::map<mpz_class, mpz_class> gmpPrimeFactorExp(mpz_class N) {
-   return gmpPrimeFactorTrialExp(N); 
+    return gmpPrimeFactorTrialExp(N);
 }
 
 // Gives back a table of <prime,times> */
@@ -181,13 +182,12 @@ std::vector<uint_fast64_t> intPrimeFactor(uint_fast64_t N) {
 
 /* returns a list of numbers that divides N. Does not include 1 and N */
 std::vector<mpz_class> gmpDivisibleBy(const mpz_class N) {
-    std::vector<mpz_class> divides; 
+    std::vector<mpz_class> divides;
 
-    const mpz_class limit {N/2};
-    for (mpz_class divider{2}; divider <= limit; divider++) {
-        if ((N % divider) == 0)
+    const mpz_class limit { N / 2 };
+    for (mpz_class divider { 2 }; divider <= limit; divider++)
+        if ( (N % divider) == 0 )
             divides.push_back(divider);
-    }
 
     return divides;
 }
@@ -195,8 +195,8 @@ std::vector<mpz_class> gmpDivisibleBy(const mpz_class N) {
 mpz_class gmpNumDivisors(const mpz_class N) {
     // first get the prime numbers.
     std::map<mpz_class,mpz_class> primeFactors = gmpPrimeFactorExp(N);
-    
-    mpz_class answer {1};
+
+    mpz_class answer { 1 };
 
     for (auto prime : primeFactors)
         answer *= prime.second + 1;

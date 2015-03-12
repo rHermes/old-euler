@@ -1,5 +1,6 @@
 #include <string>
 #include "common.h"
+
 /*
  * We set up the conditions that
  *
@@ -15,12 +16,13 @@
  * integer. Then all we have to do is plugg a and b into the formula.
  */
 std::string euler9() {
-    int answer = 0, a = 0;
+    int    answer = 0, a = 0;
     double b;
+
     do {
         a++;
-        b = (1000.0*(500-a))/(1000-a);
-    } while (!isInteger(b));
+        b = ( 1000.0 * (500 - a) ) / (1000 - a);
+    } while ( !isInteger(b) );
     answer = a * (int)b * (1000 - a - (int)b);
     return std::to_string(answer);
 }
