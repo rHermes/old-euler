@@ -14,9 +14,11 @@
  *
  * (n (1 + n) (2 + 3 n) (-1 + n))/12
  */
+
 std::string euler6() {
-    const uint_fast64_t n      = 100;
-    uint_fast64_t       answer = ( n * (1 + n) * (2 + 3 * n) * (n - 1) ) / 12;
+    const uint_fast64_t n = 100;
+    uint_fast64_t answer = ( n * (1 + n) * (2 + 3 * n) * (n - 1) ) / 12;
 
     return std::to_string(answer);
 }
+

@@ -18,15 +18,12 @@
 
 std::string euler4() {
     int answer = 0;
-
     for (int i = 999; i > 100; i--)
         // 990 is the closest multiple of 11 from 999.
-        for (int j = 990; j > 100; j -= 11) {
-            int product = i * j;
-
-            if ( product > answer && isPalindrome(product) )
+        for (int j = 990, product = j * i; j > 100; j -= 11, product = i * j)
+            if (product > answer && isPalindrome(product))
                 answer = product;
-        }
 
     return std::to_string(answer);
 }
+

@@ -15,3 +15,4 @@ std::string euler29() {
 
     return std::to_string( powers.size() );
 }
+

@@ -1,4 +1,5 @@
 #include <string>
+
 #include "common.h"
 
 /*
@@ -15,8 +16,9 @@
  * So all we have to do is find an "a" between 1 and 499 so that b is an
  * integer. Then all we have to do is plugg a and b into the formula.
  */
+
 std::string euler9() {
-    int    answer = 0, a = 0;
+    int answer = 0, a = 0;
     double b;
 
     do {
@@ -25,5 +27,7 @@ std::string euler9() {
     } while ( !isInteger(b) );
 
     answer = a * (int)b * (1000 - a - (int)b);
+
     return std::to_string(answer);
 }
+

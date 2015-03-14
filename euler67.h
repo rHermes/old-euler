@@ -16,24 +16,29 @@
  * F(r, c) + padding and F(r, c) + padding + 1
  *
  */
+
 static std::map<int,std::pair<int,int> > euler67_graph;
-static std::map<int,int>                 euler67_weights;
-static std::map<int,int>                 euler67_cost;
+static std::map<int,int> euler67_weights;
+static std::map<int,int> euler67_cost;
 
 int euler67_DFS(int key) {
+    // Have we cached this result?
     if ( euler67_cost.find(key) != euler67_cost.end() )
         return euler67_cost[key];
 
-    // If not then it is
-    auto node   = euler67_graph[key];
-    int  answer = euler67_weights[key];
-    answer           += std::max( euler67_DFS(node.first), euler67_DFS(node.second) );
+    // We haven't? Let us do it!
+    auto node = euler67_graph[key];
+
+    int answer = euler67_weights[key];
+    answer += std::max( euler67_DFS(node.first), euler67_DFS(node.second) );
+
     euler67_cost[key] = answer;
+
     return answer;
 }
 
 std::string euler67() {
-    const int n = 100; // Number of rows.
+    constexpr int n = 100; // Number of rows.
 
     std::vector<std::vector<int> > input {
         { 59 },
@@ -138,8 +143,7 @@ std::string euler67() {
         { 23, 33, 44, 81, 80, 92, 93, 75, 94, 88, 23, 61, 39, 76, 22, 3, 28, 94, 32, 6, 49, 65, 41, 34, 18, 23, 8, 47, 62, 60, 3, 63, 33, 13, 80, 52, 31, 54, 73, 43, 70, 26, 16, 69, 57, 87, 83, 31, 3, 93, 70, 81, 47, 95, 77, 44, 29, 68, 39, 51, 56, 59, 63, 7, 25, 70, 7, 77, 43, 53, 64, 3, 94, 42, 95, 39, 18, 1, 66, 21, 16, 97, 20, 50, 90, 16, 70, 10, 95, 69, 29, 6, 25, 61, 41, 26, 15, 59, 63, 35 }
     };
 
-    const unsigned int padding = 100;
-
+    constexpr unsigned int padding = 100;
     unsigned rownum = 1;
 
     for (std::vector<int> row : input ) {
@@ -147,8 +151,10 @@ std::string euler67() {
 
         for (int col : row) {
             int key = rownum * padding + colnum;
-            euler67_graph[key]   = std::make_pair(key + padding, key + padding + 1);
+
+            euler67_graph[key] = std::make_pair(key + padding, key + padding + 1);
             euler67_weights[key] = col;
+
             colnum++;
         }
 
@@ -158,9 +164,11 @@ std::string euler67() {
     // set all the lower ones to point to -1
     for ( int i = 1; i <= n; i++) {
         euler67_graph[n * padding + i] = std::make_pair(-1,-1);
-        euler67_cost[n * padding + i]  = euler67_weights[n * padding + i];
+        euler67_cost[n * padding + i] = euler67_weights[n * padding + i];
     }
 
     unsigned int answer = euler67_DFS(padding + 1);
+
     return std::to_string(answer);
 }
+
