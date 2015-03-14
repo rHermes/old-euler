@@ -139,12 +139,17 @@ std::map<mpz_class,mpz_class> gmpPrimeFactorTrialExp(const mpz_class &N) {
     mpz_sqrt( limit.get_mpz_t(), n.get_mpz_t() );
 
     for (prime = primes1[p_n]; prime <= limit; ++p_n, prime = primes1[p_n] )
+        if (n % prime == 0) {
+            // You got to love GMP
+            factors[prime] = mpz_remove(n.get_mpz_t(), n.get_mpz_t(), prime.get_mpz_t());
+            mpz_sqrt( limit.get_mpz_t(), n.get_mpz_t() );
+        } /*
         while ( (n % prime) == 0 ) {
             factors[prime]++;
             n /= prime;
             mpz_sqrt( limit.get_mpz_t(), n.get_mpz_t() );
         }
-
+        */
 
     if (n > 1)
         factors[n]++;

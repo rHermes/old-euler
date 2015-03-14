@@ -49,7 +49,6 @@ int main() {
     executeProblem(7, euler7, "104743");
     executeProblem(8, euler8, "23514624000");
     executeProblem(9, euler9, "31875000");
-
     executeProblem(10, euler10, "142913828922");
     executeProblem(11, euler11, "70600674");
     executeProblem(12, euler12, "76576500");
@@ -63,7 +62,12 @@ int main() {
     executeProblem(20, euler20, "648");
     executeProblem(21, euler21, "31626");
     executeProblem(22, euler22, "871198282");
+    executeProblem(23, euler23, "4179871");
+    executeProblem(24, euler24, "2783915460");
     executeProblem(25, euler25, "4782");
+    executeProblem(26, euler26, "983");
+    executeProblem(27, euler27, "-59231");
+    executeProblem(28, euler28, "669171001");
     executeProblem(29, euler29, "9183");
     executeProblem(30, euler30, "443839");
     executeProblem(34, euler34, "40730");

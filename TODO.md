@@ -63,5 +63,11 @@ I know.
 Another idea is to run dijsktra repetadly. I wonder if this could work better
 than what we currently have. It is worth a try.
 
+# Problem 24
+I want to implement a permutation generator that actually works.
+
+# Problem 27
+Follow the hints on the forum to get the right solution!
+
 # Things I want to implement
     - Integer factorization
