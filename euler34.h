@@ -15,6 +15,7 @@ std::string euler34() {
 
     for (mpz_class counter { 3 }; counter < 1000000; counter++) {
         sum = 0;
+
         for ( char digit : counter.get_str() )
             sum += factorial[digit - '0'];
 

@@ -14,5 +14,6 @@ std::string euler2() {
         if ( (fib1 % 2) == 0 )
             answer += fib1;
     }
+
     return std::to_string(answer);
 }

@@ -1,3 +1,7 @@
+# Things I want to do
+
+- Rehink the build and execution system to minimize compile time.
+
 Problems I want to do:
     - Problem 22
     - Problem 33

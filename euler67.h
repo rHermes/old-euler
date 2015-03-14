@@ -141,14 +141,17 @@ std::string euler67() {
     const unsigned int padding = 100;
 
     unsigned rownum = 1;
+
     for (std::vector<int> row : input ) {
         unsigned colnum = 1;
+
         for (int col : row) {
             int key = rownum * padding + colnum;
             euler67_graph[key]   = std::make_pair(key + padding, key + padding + 1);
             euler67_weights[key] = col;
             colnum++;
         }
+
         rownum++;
     }
 

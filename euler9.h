@@ -23,6 +23,7 @@ std::string euler9() {
         a++;
         b = ( 1000.0 * (500 - a) ) / (1000 - a);
     } while ( !isInteger(b) );
+
     answer = a * (int)b * (1000 - a - (int)b);
     return std::to_string(answer);
 }

@@ -7,6 +7,7 @@ std::string euler40() {
         champcons += std::to_string(number);
 
     int answer = 1;
+
     for (int digit : { 1, 10, 100, 1000, 10000, 100000, 1000000 })
         answer *= champcons[digit] - '0';
 

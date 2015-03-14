@@ -29,11 +29,13 @@ std::string euler8() {
 
     for (uint pos = 0; pos < (num.length() - digits); pos++) {
         uint_fast64_t temp = 1;
+
         for ( char c : num.substr(pos, digits) )
             temp *= c - '0';
 
         if (temp > answer)
             answer = temp;
     }
+
     return std::to_string(answer);
 }

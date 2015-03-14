@@ -9,6 +9,7 @@ std::string euler48() {
         mpz_ui_pow_ui(power.get_mpz_t(), i, i);
         sum += power;
     }
+
     std::string answer = sum.get_str();
     return answer.substr(answer.length() - 10);
 }
