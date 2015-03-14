@@ -1,0 +1,38 @@
+#pragma once
+#include <string>
+
+
+// Define solutions.
+std::string euler1();
+std::string euler2();
+std::string euler3();
+std::string euler4();
+std::string euler5();
+std::string euler6();
+std::string euler7();
+std::string euler8();
+std::string euler9();
+std::string euler10();
+std::string euler11();
+std::string euler12();
+std::string euler13();
+std::string euler14();
+std::string euler15();
+std::string euler16();
+std::string euler17();
+std::string euler18();
+std::string euler19();
+std::string euler20();
+std::string euler21();
+std::string euler22();
+std::string euler25();
+std::string euler29();
+std::string euler30();
+std::string euler34();
+std::string euler36();
+std::string euler40();
+std::string euler48();
+std::string euler67();
+std::string euler81();
+std::string euler83();
+std::string euler349();

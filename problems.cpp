@@ -7,45 +7,7 @@
 #include <omp.h>
 #include <iomanip>
 
-// Problem solutions
-#include "euler1.h"
-#include "euler2.h"
-#include "euler3.h"
-#include "euler4.h"
-#include "euler5.h"
-#include "euler6.h"
-
-#include "euler7.h"
-
-#include "euler8.h"
-#include "euler9.h"
-
-#include "euler10.h"
-
-#include "euler11.h"
-#include "euler12.h"
-#include "euler13.h"
-#include "euler14.h"
-#include "euler15.h"
-#include "euler16.h"
-#include "euler17.h"
-#include "euler18.h"
-#include "euler19.h"
-#include "euler20.h"
-#include "euler21.h"
-#include "euler22.h"
-#include "euler25.h"
-#include "euler29.h"
-#include "euler30.h"
-#include "euler34.h"
-#include "euler36.h"
-#include "euler40.h"
-#include "euler48.h"
-#include "euler67.h"
-#include "euler81.h"
-#include "euler82.h"
-#include "euler83.h"
-#include "euler349.h"
+#include "problems.h"
 
 static double total          = 0.0;
 static int    total_problems = 0;
@@ -84,7 +46,6 @@ int main() {
     executeProblem(4, euler4, "906609");
     executeProblem(5, euler5, "232792560");
     executeProblem(6, euler6, "25164150");
-
     executeProblem(7, euler7, "104743");
     executeProblem(8, euler8, "23514624000");
     executeProblem(9, euler9, "31875000");
