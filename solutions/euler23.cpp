@@ -2,7 +2,7 @@
 #include <vector>
 #include <gmpxx.h>
 
-#include "../common.h"
+#include "../common.hpp"
 
 std::string euler23() {
     std::vector<unsigned> abundant;

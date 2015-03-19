@@ -6,7 +6,7 @@
 #include <set>
 #include <gmpxx.h>
 
-#include "../constants.h"
+#include "../constants.hpp"
 
 /*
  * This is a file with common functons.

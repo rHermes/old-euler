@@ -1,6 +1,6 @@
 #include <string>
 
-#include "../common.h"
+#include "../common.hpp"
 
 /*
  * We set up the conditions that

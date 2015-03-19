@@ -1,7 +1,7 @@
 #include <string>
 #include <set>
 #include <gmpxx.h>
-#include "../common.h"
+#include "../common.hpp"
 
 std::string euler21() {
     mpz_class answer;

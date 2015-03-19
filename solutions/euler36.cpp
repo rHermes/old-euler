@@ -1,7 +1,7 @@
 #include <string>
 #include <algorithm>
 #include <gmpxx.h>
-#include "../common.h"
+#include "../common.hpp"
 /*
  * We only need to check odd numbers as any even number would look like:
  *

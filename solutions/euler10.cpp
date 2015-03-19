@@ -2,7 +2,7 @@
 #include <string>
 #include <cstdint>
 
-#include "../constants.h"
+#include "../constants.hpp"
 
 std::string euler10() {
     mpz_class answer(0);

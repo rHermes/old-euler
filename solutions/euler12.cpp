@@ -1,6 +1,6 @@
 #include <string>
 
-#include "../common.h"
+#include "../common.hpp"
 
 /*
  * This has later been optimized with the tips given in the overview

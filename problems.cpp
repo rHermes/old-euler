@@ -7,7 +7,7 @@
 #include <omp.h>
 #include <iomanip>
 
-#include "problems.h"
+#include "problems.hpp"
 
 static double total          = 0.0;
 static int    total_problems = 0;
@@ -70,6 +70,7 @@ int main() {
     executeProblem(28, euler28, "669171001");
     executeProblem(29, euler29, "9183");
     executeProblem(30, euler30, "443839");
+    executeProblem(31, euler31, "73682");
     executeProblem(34, euler34, "40730");
     executeProblem(36, euler36, "872187");
     executeProblem(40, euler40, "210");

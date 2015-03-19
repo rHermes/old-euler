@@ -1,5 +1,5 @@
 #include <string>
-#include "../common.h"
+#include "../common.hpp"
 
 /*
  * This problem is fast to solve if you realize that you can write a 6 digit
