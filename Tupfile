@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -std=c++11 -O2
+CXXFLAGS = -Wall -std=c++11 -O2 -Ilibs/
 LDFLAGS = -lgomp -lgmpxx -lgmp -O2 
 
 : foreach *.cpp solutions/*.cpp utils/*.cpp |> $(CXX) -c %f -o %o $(CXXFLAGS) |> obj/%B.o

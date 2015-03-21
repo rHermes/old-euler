@@ -1,0 +1,45 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{What I've Learned From Project Euler}
+\author{Teodor Spæren}
+
+\maketitle
+
+\tableofcontents
+
+\section{Problems}
+In this section of the document, I'll discuss how I solved each of the different equations. Here is a list of solutions
+I'm especially pleased with:
+
+\begin{itemize}
+    \item[-] Problem 39
+\end{itemize}
+
+\section{Math}
+\subsection{Pythagorean Triples}
+
+\subsubsection{Generation}
+
+\paragraph{Linear Algebra}
+
+\begin{equation}
+    \begin{array}{lcr}
+    A = \begin{bmatrix} 1 & -2 & 2 \\ 2 & -1 & 2 \\ 2 & -2 & 3 \end{bmatrix} &
+    B = \begin{bmatrix} 1 & 2 & 2 \\ 2 & 1 & 2 \\ 2 & 2 & 3 \end{bmatrix} &
+    C = \begin{bmatrix} -1 & 2 & 2 \\ -2 & 1 & 2 \\ -2 & 2 & 3 \end{bmatrix}
+    \end{array}
+\end{equation}
+
+\begin{itemize}
+    \item[-]\href{http://en.wikipedia.org/wiki/Formulas_for_generating_Pythagorean_triples}{Wikipedia - Formulas for generating Pythagorean triples}
+    \item[-]\href{http://en.wikipedia.org/wiki/Tree_of_primitive_Pythagorean_triples}{Wikipedia - Tree of primitive Pythagorean triples}
+\end{itemize}
+
+\end{document}

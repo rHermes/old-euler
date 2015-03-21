@@ -41,6 +41,7 @@ std::string euler35();
 std::string euler36();
 std::string euler37();
 std::string euler38();
+std::string euler39();
 std::string euler40();
 std::string euler41();
 std::string euler48();

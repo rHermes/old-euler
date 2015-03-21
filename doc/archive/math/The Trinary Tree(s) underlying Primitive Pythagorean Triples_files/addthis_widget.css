@@ -1,0 +1,48 @@
+
+
+
+
+
+/*
+     FILE ARCHIVED ON 23:11:57 Aug 10, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 12:41:32 Mar 21, 2015.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+
+#addthis_services a {
+  padding: 0px 0px 0px 4px; 
+  color:#333333; 
+  display: block;
+}
+
+#addthis_dropdown a:hover {
+  background-color: #F5F5F5;
+}
+
+#addthis_dropdown a {
+  text-decoration: none; 
+}
+
+#addthis_dropdown img {
+  border:none; 
+  vertical-align:middle;
+  width: 16px;
+  height: 16px;
+}
+
+#addthis_dropdown {
+  z-index: 100;
+  text-align: left;
+  width: 230px; 
+  position: absolute; 
+  display: none; 
+  border: #CCCCCC solid 1px; 
+  padding: 1px 1px 0px 1px; 
+  overflow: hidden;
+  background: #FFF;
+  font-family:Geneva, Arial, Helvetica, sans-serif;
+}
+
