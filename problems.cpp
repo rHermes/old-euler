@@ -71,9 +71,15 @@ int main() {
     executeProblem(29, euler29, "9183");
     executeProblem(30, euler30, "443839");
     executeProblem(31, euler31, "73682");
+    executeProblem(32, euler32, "45228");
+    executeProblem(33, euler33, "100");
     executeProblem(34, euler34, "40730");
+    executeProblem(35, euler35, "55");
     executeProblem(36, euler36, "872187");
+//    executeProblem(37, euler37, "748317"); A little slow
+    executeProblem(38, euler38, "932718654");
     executeProblem(40, euler40, "210");
+    executeProblem(41, euler41, "7652413");
     executeProblem(48, euler48, "9110846700");
     executeProblem(67, euler67, "7273");
     executeProblem(81, euler81, "427337");
