@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 
-
 // Define solutions.
 std::string euler1();
 std::string euler2();
@@ -44,6 +43,9 @@ std::string euler38();
 std::string euler39();
 std::string euler40();
 std::string euler41();
+std::string euler42();
+std::string euler43();
+std::string euler45();
 std::string euler48();
 std::string euler67();
 std::string euler81();
