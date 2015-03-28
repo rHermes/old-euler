@@ -83,8 +83,15 @@ int main() {
     executeProblem(41, euler41, "7652413");
     executeProblem(42, euler42, "162");
     executeProblem(43, euler43, "16695334890");
+    executeProblem(44, euler44, "5482660");
     executeProblem(45, euler45, "1533776805");
+    executeProblem(46, euler46, "5777");
+    executeProblem(47, euler47, "134043");
     executeProblem(48, euler48, "9110846700");
+    executeProblem(49, euler49, "296962999629");
+    executeProblem(50, euler50, "997651");
+    executeProblem(56, euler56, "972");
+    executeProblem(66, euler66, "661");
     executeProblem(67, euler67, "7273");
     executeProblem(81, euler81, "427337");
 

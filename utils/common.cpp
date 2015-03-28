@@ -47,6 +47,9 @@ constexpr uint_fast64_t intCantorPairing(const uint_fast64_t& k1, const uint_fas
 // This is really slow, but it works!
 std::vector<uint_fast64_t> intPrimeFactorTrial(uint_fast64_t N) {
     std::vector<uint_fast64_t> factors;
+    // Return 0 for 0
+    if(N == 0)
+        return factors;
 
     // get rid of all the 2s
     while ( (N % 2) == 0 ) {
@@ -74,6 +77,10 @@ std::vector<uint_fast64_t> intPrimeFactorTrial(uint_fast64_t N) {
 
 std::map<uint_fast64_t, uint_fast64_t> intPrimeFactorTrialExp(uint_fast64_t N) {
     std::map<uint_fast64_t,uint_fast64_t> factors;
+
+    // Return 0 for 0
+    if(N == 0)
+        return factors;
 
     // get rid of all the 2s
     while ( (N % 2) == 0 ) {
@@ -135,6 +142,9 @@ std::map<mpz_class,mpz_class> gmpPrimeFactorTrialExp(const mpz_class &N) {
 
     // format <prime, times>
     std::map<mpz_class,mpz_class> factors;
+
+    if (N == 0)
+        return factors;
 
     mpz_sqrt( limit.get_mpz_t(), n.get_mpz_t() );
 
