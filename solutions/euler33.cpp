@@ -24,7 +24,7 @@ std::string euler33() {
         for (double c = a+1; c < 10; c++)
             for (double b = 1; b < 10; b++)
                 if ((10*a + b)/(10*b + c) == a/c)
-                    answer *= boost::rational<int>(a,c);
+                    answer *= boost::rational<int>(static_cast<int>(a),static_cast<int>(c));
 
     return std::to_string(answer.denominator());
 }

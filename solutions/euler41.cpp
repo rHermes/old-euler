@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <gmpxx.h>
+#include <cmath>
 
 /*
  * A couple of optimalizations here:
